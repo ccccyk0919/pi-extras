@@ -1,6 +1,6 @@
 # pi-extras
 
-个人用的 pi 扩展合集：3 个自包含扩展（零运行时依赖，只用 pi 类型 + Node 内置模块），外加一份 `pi-recap` 配置参考。
+个人用的 pi 扩展合集：2 个自包含扩展（零运行时依赖，只用 pi 类型 + Node 内置模块），外加一份 `pi-recap` 配置参考。
 
 ## 安装
 
@@ -23,21 +23,6 @@ pi install git:github.com/ccccyk0919/pi-extras
 - 自包含：不 import board 内部模块，直接原子读写 `~/.pi/agent/agent-board/views/<viewId>/meta.json`
 
 依赖：pi-agent-board 已安装（未安装时扩展静默无操作）。
-
-### `md-view`
-
-用本机默认浏览器渲染 markdown。
-
-```
-/view            # 打开当前会话最近消息里最新出现的 .md 文件
-/view <path>     # 打开指定文件（绝对路径或 ~ 开头；相对路径不支持）
-```
-
-- 临时本地 HTTP 服务渲染，60 秒后自动关闭，避免端口泄漏
-- 手写极简 markdown 渲染器，HTML 转义防 XSS
-- 路径提取兼容中文路径与 git-bash 的 `/c/...` 写法；WSL 走 `cmd.exe` 打开
-
-零依赖。
 
 ### `web-search-summary-model`
 
@@ -77,7 +62,7 @@ Copy-Item config\pi-recap.json "$env:USERPROFILE\.pi\agent\extensions\pi-recap.j
 
 - `board-name-sync` 的 board 路径硬编码为 `homedir()/.pi/agent/agent-board`，不跟随 `PI_CODING_AGENT_DIR`
 - `web-search-summary-model` 写的是**全局** `web-search.json`：多个 pi 会话用不同模型时会互相覆盖，以最后触发的事件为准
-- 三个扩展均在 Windows 上验证；`md-view` 的浏览器唤起在 Linux 走 `xdg-open`（未实测）
+- 两个扩展均在 Windows 上验证；Linux 未实测
 
 ## 更新
 

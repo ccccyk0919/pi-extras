@@ -1,7 +1,7 @@
 {
   "name": "pi-extras",
   "version": "0.1.0",
-  "description": "Personal pi extensions: markdown viewer slash command, agent-board session-name sync, and web_search summary-model tracking",
+  "description": "Personal pi extensions: agent-board session-name sync and web_search summary-model tracking",
   "keywords": [
     "pi",
     "pi-extension",
@@ -28,7 +28,6 @@
   "pi": {
     "extensions": [
       "./extensions/board-name-sync.ts",
-      "./extensions/md-view.ts",
       "./extensions/web-search-summary-model.ts"
     ]
   }
